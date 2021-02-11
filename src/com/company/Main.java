@@ -1,16 +1,13 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.function.BiFunction;
 
 public class Main {
 
     public static void main(String[] args) {
-        String[] cars = { "Audi","Skoda","Lada","BMW","Peugeot","Lancia"};
-
-
-        Arrays.sort(cars, String::compareToIgnoreCase);
-        for(String str: cars){
-            System.out.println(str);
-        }
+        BiFunction<Double, Double, Double> percentage = CalcPercentage::calculatePercentage;
+        Double result = percentage.apply(31.0, 25.0);
+        System.out.println("Congratulation you scored: "+Math.round(result)+"%");
     }
 }
